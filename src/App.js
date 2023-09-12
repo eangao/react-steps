@@ -7,6 +7,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div>
+      <Steps />
+      <Steps />
+    </div>
+  );
+}
+
+function Steps() {
   // const [test, setTest] = useState({ name: "Jonas" });
   // const [test] = useState({ name: "Jonas" });
   // let [step, setStep] = useState(1);
@@ -32,11 +41,12 @@ export default function App() {
 
     // BAD PRACTICE
     // test.name = "Fred";
+
     // setTest({ name: "Fred" });
   }
 
   return (
-    <>
+    <div>
       <button className="close" onClick={() => setOpen((is) => !is)}>
         &times;
       </button>
@@ -71,6 +81,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
