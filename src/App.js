@@ -13,14 +13,21 @@ export default function App() {
 
   // always use a const and setter function
   const [step, setStep] = useState(1);
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) {
+      //don't work
+      // setStep(step + 1);
+      // setStep(step + 1);
+
+      setStep((s) => s + 1);
+      // setStep((s) => s + 1);
+    }
     // step = step + 1;
 
     // BAD PRACTICE
@@ -30,7 +37,7 @@ export default function App() {
 
   return (
     <>
-      <button className="close" onClick={() => setOpen(!isOpen)}>
+      <button className="close" onClick={() => setOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
